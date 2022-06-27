@@ -1,0 +1,15 @@
+<h2>Listado de Parroquias</h3>
+<h3>Número de Parroquias {{ numero_parroquias }}</h3>
+
+{% for e in parroquias %}
+    
+  {{e}}<br/>
+  <ul>
+  {% for numero in e.barrio_set.all%}
+      <li>
+          Barrio {{numero}}<br/>
+      </li>
+  {% endfor %}
+  </ul>
+  <br/>
+{% endfor %}
